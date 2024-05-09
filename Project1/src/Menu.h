@@ -7,8 +7,10 @@ class Menu
 	//Returns a list of Menu Items
 
 public:
-	void GetMenuItems();
+	void RetrieveMenuFromDataBase();
 
+	std::map<std::string, float> GetMenuItems() const;
+	
 private:
 	std::map<std::string, float> MenuItems;
 };

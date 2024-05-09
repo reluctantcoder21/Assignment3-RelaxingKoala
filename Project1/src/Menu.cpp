@@ -3,7 +3,7 @@
 #include <iostream>
 #include <sstream>
 
-void Menu::GetMenuItems()
+void Menu::RetrieveMenuFromDataBase()
 {
     //Look through a document and grab the variables and pass the two variables into an array
 
@@ -41,4 +41,9 @@ void Menu::GetMenuItems()
     {
         std::cout << "Item: " << item.first << ", Cost: " << item.second << std::endl;
     }
+}
+
+std::map<std::string, float> Menu::GetMenuItems() const
+{
+    return MenuItems;
 }
