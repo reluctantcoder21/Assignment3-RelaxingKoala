@@ -3,6 +3,11 @@
 #include <iostream>
 #include <sstream>
 
+Menu::Menu()
+{
+    RetrieveMenuFromDataBase();
+}
+
 void Menu::RetrieveMenuFromDataBase()
 {
     //Look through a document and grab the variables and pass the two variables into an array
@@ -36,10 +41,13 @@ void Menu::RetrieveMenuFromDataBase()
     {
         std::cerr << "Unable to open file!" << std::endl;
     }
+}
 
-    for (const std::pair<const std::string, float>& item : MenuItems)
+void Menu::ShowMenuItems() const
+{
+    for (const std::pair<const std::string, float>& MenuItem : MenuItems)
     {
-        std::cout << "Item: " << item.first << ", Cost: " << item.second << std::endl;
+        std::cout << "Item: " << MenuItem.first << " Cost: " << MenuItem.second << std::endl;
     }
 }
 

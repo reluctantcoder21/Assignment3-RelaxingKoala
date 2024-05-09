@@ -4,13 +4,18 @@
 
 class Menu
 {
+public:
+	Menu();
+	~Menu() = default;
+
 	//Returns a list of Menu Items
 
-public:
+	void ShowMenuItems() const;
+	
+	std::map<std::string, float> GetMenuItems() const;
+
+private:
 	void RetrieveMenuFromDataBase();
 
-	std::map<std::string, float> GetMenuItems() const;
-	
-private:
 	std::map<std::string, float> MenuItems;
 };
